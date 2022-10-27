@@ -7,7 +7,7 @@ class CityController {
             const cities = await CityService.getCities(title)
             return res.json(cities)
         } catch (e) {
-            console.log(e)
+            next(e)
         }
     }
     async addCity(req, res, next) {
@@ -16,7 +16,7 @@ class CityController {
             const response = await CityService.addCity(title)
             return res.json(response)
         } catch (e) {
-            console.log(e)
+            next(e)
         }
     }
 }

@@ -82,7 +82,7 @@ class UserService {
         //Обновляем корзину пользователя
         user.tickets = tickets
         await user.save()
-        return 'Success'
+        return tickets
     }
     async deleteFromCart(email, ticket) {
         const user = await UserModel.findOne({ email })

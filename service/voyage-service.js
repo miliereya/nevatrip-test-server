@@ -15,7 +15,7 @@ class VoyageService {
                     $regex: to
                 }}
             ]
-        })
+        }).sort({timeStart: 'asc'})
 
         return {voyagesData, date, quantity}
     }

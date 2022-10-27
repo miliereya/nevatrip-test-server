@@ -7,7 +7,7 @@ class VoyageController {
             const voyages = await VoyageService.getVoyages(from, to, date, quantity)
             return res.json(voyages)
         } catch (e) {
-            console.log(e)
+            next(e)
         }
     }
     async addVoyage(req, res, next) {
@@ -16,7 +16,7 @@ class VoyageController {
             const response = await VoyageService.addVoyage(from, to, price, timeStart, timeEnd, timeTravel)
             return res.json(response)
         } catch (e) {
-            console.log(e)
+            next(e)
         }
     }
 }
